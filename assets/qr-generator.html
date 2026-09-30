@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR code maker</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 1.5rem;
+      font-family: system-ui, sans-serif; color: #3a2a5c;
+      background: linear-gradient(160deg, #f7f2ff, #efe6ff 55%, #fde8f3); }
+    .box { background: #fff; padding: 2rem; border-radius: 18px; box-shadow: 0 10px 30px rgba(120,80,190,.18);
+      max-width: 420px; width: 100%; text-align: center; }
+    h1 { margin: 0 0 .4rem; font-size: 1.5rem; color: #5b3d94; }
+    p { margin: 0 0 1rem; font-size: .95rem; }
+    input { width: 100%; padding: .8rem 1rem; border: 2px solid #e0d0fb; border-radius: 10px; font-size: 1rem; }
+    input:focus { outline: 3px solid #ff5fa8; border-color: transparent; }
+    button { margin-top: .8rem; padding: .8rem 1.6rem; border: 0; border-radius: 999px; background: #ff5fa8;
+      color: #fff; font-weight: 700; font-size: 1rem; cursor: pointer; }
+    #qr { margin: 1.4rem auto 0; display: flex; justify-content: center; }
+    #qr img, #qr canvas { border: 10px solid #fff; border-radius: 8px; }
+    #err { color: #c2185b; font-weight: 600; min-height: 1.2em; margin-top: .6rem; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>QR code for the memory site</h1>
+    <p>Paste the live link of your website, then download the QR code.</p>
+    <input id="url" type="url" placeholder="https://your-site.netlify.app" autocomplete="off">
+    <button id="make" type="button">Make QR code</button>
+    <div id="err" role="alert"></div>
+    <div id="qr"></div>
+    <button id="dl" type="button" hidden>Download PNG</button>
+  </div>
+
+  <script>
+    var qrBox = document.getElementById("qr");
+    var err = document.getElementById("err");
+    var dl = document.getElementById("dl");
+
+    document.getElementById("make").addEventListener("click", function () {
+      var url = document.getElementById("url").value.trim();
+      err.textContent = ""; qrBox.innerHTML = ""; dl.hidden = true;
+
+      if (!/^https:\/\//i.test(url)) {
+        err.textContent = "Enter the full link starting with https://";
+        return;
+      }
+      if (typeof QRCode === "undefined") {
+        err.textContent = "Could not load the QR library. Check your internet and reload.";
+        return;
+      }
+      new QRCode(qrBox, { text: url, width: 280, height: 280, colorDark: "#5b3d94", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.H });
+      dl.hidden = false;
+    });
+
+    dl.addEventListener("click", function () {
+      var canvas = qrBox.querySelector("canvas");
+      if (!canvas) return;
+      var a = document.createElement("a");
+      a.href = canvas.toDataURL("image/png");
+      a.download = "memory-site-qr.png";
+      a.click();
+    });
+  </script>
+</body>
+</html>
