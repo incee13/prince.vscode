@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f1e8ff">
+  <title>For You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <audio id="bgm" loop preload="auto"></audio>
+  <canvas id="hearts" aria-hidden="true"></canvas>
+
+  <!-- Gate: needed so the browser allows music to play -->
+  <div id="gate" role="dialog" aria-modal="true" aria-labelledby="gateText">
+    <div class="gate-card">
+      <div class="envelope" aria-hidden="true">💌</div>
+      <p id="gateText" class="gate-text"></p>
+      <button id="gateBtn" class="btn btn-pink" type="button"></button>
+    </div>
+  </div>
+
+  <header id="topbar" class="topbar hidden">
+    <nav class="tabs" aria-label="Pages">
+      <button class="tab active" data-page="intro" type="button">Hello</button>
+      <button class="tab" data-page="memories" type="button">Memories</button>
+      <button class="tab" data-page="letter" type="button">Letter</button>
+    </nav>
+    <button id="musicBtn" class="music-btn" type="button" aria-label="Pause music" aria-pressed="true">♫</button>
+  </header>
+
+  <main id="app" class="hidden">
+
+    <!-- PAGE 1: INTRO -->
+    <section id="page-intro" class="page active" aria-labelledby="introTitle">
+      <div id="introBg" class="intro-bg" aria-hidden="true"></div>
+      <div class="intro-veil" aria-hidden="true"></div>
+      <div class="intro-content">
+        <h1 id="introTitle" class="hero-title"></h1>
+        <p id="introMessage" class="hero-msg"></p>
+        <p id="counter" class="counter"></p>
+        <button class="btn btn-pink" data-go="memories" type="button">See our memories</button>
+      </div>
+    </section>
+
+    <!-- PAGE 2: MEMORIES -->
+    <section id="page-memories" class="page" aria-labelledby="memTitle">
+      <div class="page-inner">
+        <h2 id="memTitle" class="page-title"></h2>
+        <p id="memSub" class="page-sub"></p>
+        <div id="grid" class="grid"></div>
+        <div class="page-foot">
+          <button class="btn btn-pink" data-go="letter" type="button">Read my letter</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: LETTER -->
+    <section id="page-letter" class="page" aria-labelledby="letterTitle">
+      <div class="page-inner letter-wrap">
+        <article class="letter">
+          <h2 id="letterTitle" class="page-title"></h2>
+          <div id="letterBody" class="letter-body"></div>
+          <p id="signOff" class="sign-off"></p>
+          <p id="signature" class="signature"></p>
+        </article>
+        <div class="page-foot">
+          <button class="btn btn-ghost" data-go="intro" type="button">Back to the start</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" hidden>
+    <button id="lbClose" class="lb-close" type="button" aria-label="Close">×</button>
+    <figure class="lb-fig">
+      <img id="lbImg" alt="">
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+  </div>
+
+<script src="data.js"></script>
+<script src="main.js"></script>
+</html>
