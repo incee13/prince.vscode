@@ -33,12 +33,12 @@ window.SITE = {
   memories: [
     { type: "photo", file: "assets/photos/1.jpg", date: "July 13", message: "Birthday ko nito, sobrang saya ko kase finally aabangan kona din bday ko kase may katulad mo ako na babati sakin." },
     { type: "photo", file: "assets/photos/2.jpg", date: "July 29", message: "Eto nag cine tayo, sobrang special sakin nito dahil matagal kona gustong mag cine tapos yung pinakamamahal kopa kasama ko." },
-    { type: "video", file: "assets/videos/1.mp4", date: "September 16", message: "Ito hehe simpleng tiktok lang natin ito pero naghing special sya sakin nung nakita ko na sobra kang natutuwa sa video nayan, sobra akong sumaya non kaya hindi ko malilimutan yan. Papapwet yarn" },
+    { type: "video", file: "assets/videos/1.mp4", date: "July 13", message: "Ito hehe simpleng tiktok lang natin ito pero naghing special sya sakin nung nakita ko na sobra kang natutuwa sa video nayan, sobra akong sumaya non kaya hindi ko malilimutan yan. Papapwet yarn" },
     { type: "photo", file: "assets/photos/3.jpg", date: "August 15", message: "Ito yung unang fist time mong umiyak sa harap ko, im so thankful and na aapreciate ko yun kase i bacame someone na you can cry on." },
     { type: "photo", file: "assets/photos/4.jpg", date: "September 20", message: "Ito yung time na nag exchange gift tayo, super cute lang kase alam natin yung gusto ng isat isa and malaki man o maliit, mahal man o hindi eh naaapreciate padin natin iyon." },
-    { type: "photo", file: "assets/photos/5.jpg", date: "Jun 2024", message: "Ito naman is yung bumili ka ng lego for us to build hehe super cute, pero hindi lahat sunshine and rainbows, ito din yung 2nd time na umiyak ka sakin pero this time for no reason. Hugs baby ko." },
-    { type: "video", file: "assets/videos/2.mp4", date: "Jul 2024", message: "Ito sobrang special sakin nito kase matagal kona gusto gawin yang arcade date hehe tapos yung kumanta kasama ka (yung first time kase halos di ako kumanta then yung sa bahay nyo naman may iba tayong kasama)." },
-    { type: "photo", file: "assets/photos/6.jpg", date: "Aug 2024", message: "Ito hehe parehas natin first time mag marugame, sarap dito hehe tapos ikaw pa kasama ko paldoooo, cute mo pa dito kase naumay ka dun sa inorder mo kaya pinakain mo sakin yung natira para di sayang." }
+    { type: "photo", file: "assets/photos/5.jpg", date: "September 16", message: "Ito naman is yung bumili ka ng lego for us to build hehe super cute, pero hindi lahat sunshine and rainbows, ito din yung 2nd time na umiyak ka sakin pero this time for no reason. Hugs baby ko." },
+    { type: "video", file: "assets/videos/2.mp4", date: "September 16", message: "Ito sobrang special sakin nito kase matagal kona gusto gawin yang arcade date hehe tapos yung kumanta kasama ka (yung first time kase halos di ako kumanta then yung sa bahay nyo naman may iba tayong kasama)." },
+    { type: "photo", file: "assets/photos/6.jpg", date: "September 16", message: "Ito hehe parehas natin first time mag marugame, sarap dito hehe tapos ikaw pa kasama ko paldoooo, cute mo pa dito kase naumay ka dun sa inorder mo kaya pinakain mo sakin yung natira para di sayang." }
   ],
 
   // ---------- Page 3: Letter ----------
